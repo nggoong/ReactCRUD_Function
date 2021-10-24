@@ -5,6 +5,7 @@ function UpdateModeViewer() {
             <form className='viewerForm'>
                 <input type="text" name = "title" placeholder="title"></input>
                 <textarea type="text" name = "content" placeholder="desc"></textarea>
+                <input type="submit"></input>
             </form>
         </div>
     );

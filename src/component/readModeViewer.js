@@ -13,9 +13,6 @@ function ReadModeViewer(props) {
         _title = data[id-1].title;
         _desc = data[id-1].desc;
     }
-    console.log("readModeviewer rendered");
-    console.log(data);
-    console.log(mode);
     return(
         <div>
             <h1>{_title}</h1>
