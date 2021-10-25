@@ -3,6 +3,8 @@ function CreateModeViewer(props) {
     function saveData(e) {
         e.preventDefault();
         props.onSubmit(e.target.title.value, e.target.content.value);
+        e.target.title.value = ""; 
+        e.target.content.value = "";
     }
     return(
         <div>

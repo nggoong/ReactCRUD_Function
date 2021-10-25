@@ -9,11 +9,12 @@ function Subject(props) {
 
     function showSubject(e) {
         e.preventDefault();
-        props.onChangeID(e.target.dataset.id);
+        props.onChangeID(e.target.dataset.id, e.target.dataset.value);
     }
 
     for(let i = 0; i< dataArr.length; i++) {
-        list.push(<li key={dataArr[i].id}><a href="/"  data-id = {dataArr[i].id} onClick = {showSubject}>
+        list.push(<li key={dataArr[i].id}><a href="/"  data-id = {dataArr[i].id}
+        data-value = {dataArr[i].title} onClick = {showSubject}>
             {dataArr[i].title}
             </a></li>)
     }
