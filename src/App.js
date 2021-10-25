@@ -47,24 +47,38 @@ function saveTheData(subjectTitle, content) {
   setSubject(tempData);
 }
 
-
-if(mode === 'welcome'){
-  Viewer = <ReadModeViewer value = {welcome}  mode = {mode} Id={selectedSubjectId}></ReadModeViewer>
+function UpdateData(data) {
+  setSubject(data);
+  console.log(data);
 }
 
-else if (mode === 'read') {
-  Viewer = <ReadModeViewer value = {subject}  mode = {mode} Id={selectedSubjectId}></ReadModeViewer>
+function getContent() {
+  if(mode === 'welcome'){
+    // Viewer = <ReadModeViewer value = {welcome}  mode = {mode} Id={selectedSubjectId}></ReadModeViewer>
+    Viewer = <div>안녕하세요</div>
+  }
+  
+  else if (mode === 'read') {
+    Viewer = <ReadModeViewer value = {subject}  mode = {mode} Id={selectedSubjectId}></ReadModeViewer>
+  }
+  
+  else if(mode === 'create') {
+    Viewer = <CreateModeViewer onSubmit = {saveTheData}></CreateModeViewer>
+  }
+  else if(mode === 'update') {
+    Viewer = <UpdateModeViewer value = {subject} onSubmit={UpdateData}></UpdateModeViewer>
+  }
+  else if(mode === 'delete') {
+    Viewer = <DeleteModeViewer></DeleteModeViewer>
+  }
+
+  return Viewer;
 }
 
-else if(mode === 'create') {
-  Viewer = <CreateModeViewer onSubmit = {saveTheData}></CreateModeViewer>
-}
-else if(mode === 'update') {
-  Viewer = <UpdateModeViewer></UpdateModeViewer>
-}
-else if(mode === 'delete') {
-  Viewer = <DeleteModeViewer></DeleteModeViewer>
-}
+getContent();
+
+
+
 
 
   return (

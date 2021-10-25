@@ -1,6 +1,8 @@
 function Subject(props) {
     let dataArr = props.subject;
     let list = [];
+    console.log('render');
+    
 
 
     // onClick이벤트 구현
